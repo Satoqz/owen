@@ -96,7 +96,6 @@ async function setActivity(line1, line2, hover, imageKey) {
 rpc.login({ clientId }).catch(console.error);
 
 app.on("ready", () => {
-    autoUpdater.allowPrerelease = true;
     autoUpdater.checkForUpdatesAndNotify();
     createWindow();
 });
