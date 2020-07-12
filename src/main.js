@@ -53,7 +53,6 @@ function createWindow() {
                 app.isQuiting = true;
                 app.quit();
                 appIcon.destroy();
-                process.crash();
             },
         },
     ]);
