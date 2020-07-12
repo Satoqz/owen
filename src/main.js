@@ -72,11 +72,6 @@ function createWindow() {
     ipcMain.on("close-app", () => win.hide());
 }
 
-app.on("ready", () => {
-    autoUpdater.checkForUpdatesAndNotify();
-    createWindow();
-});
-
 const clientId = "727887407491317910";
 
 const rpc = new DiscordRPC.Client({ transport: "ipc" });
@@ -101,4 +96,8 @@ async function setActivity(line1, line2, hover, imageKey) {
 
 rpc.login({ clientId }).catch(console.error);
 
-return true;
+app.on("ready", () => {
+    autoUpdater.allowPrerelease = true;
+    autoUpdater.checkForUpdatesAndNotify();
+    createWindow();
+});
