@@ -52,7 +52,7 @@ function createWindow() {
             click() {
                 app.isQuiting = true;
                 app.quit();
-                appIcon.destroy();
+                app.exit();
             },
         },
     ]);
