@@ -15,7 +15,12 @@
     "appId": "owen",
     "mac": {
       "category": "owen"
-    }
+    },
+    "publish": [{
+        "provider": "github",
+        "owner": "Satoqz",
+        "repo": "owen"
+    }]
   },
   "repository": {
     "type": "git",
