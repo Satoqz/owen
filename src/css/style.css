@@ -52,7 +52,7 @@ body {
 }
 
 #formContainer {
-    padding: 10vh;
+    padding: 10vh 10vh 0 10vh;
 }
 
 #preview {

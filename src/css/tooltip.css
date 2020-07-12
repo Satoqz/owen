@@ -32,7 +32,6 @@
     border-color: #000 transparent transparent transparent;
 }
 
-/* Show the tooltip text when you mouse over the tooltip container */
 .toolTip:hover .toolTipText {
     visibility: visible;
     opacity: 1;
