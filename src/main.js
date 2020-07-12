@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Tray, Menu, ipcMain } = require("electron");
+const { app, BrowserWindow, Tray, Menu, ipcMain, dialog } = require("electron");
 const path = require("path");
 const url = require("url");
 const DiscordRPC = require("discord-rpc");
@@ -33,10 +33,11 @@ function createWindow() {
         titleBarStyle: "hidden",
         webPreferences: {
             nodeIntegration: true,
+            webSecurity: true
         },
     });
 
-    //win.setMenu(null);
+    win.setMenu(null);
 
     win.loadURL(url.format({
         pathname: path.join(__dirname, "index.html"),
@@ -69,6 +70,12 @@ function createWindow() {
     ipcMain.on("presence-update", (event, arg) => setActivity(arg.line1, arg.line2, arg.hover, arg.imageKey));
         
     ipcMain.on("close-app", () => win.hide());
+
+    ipcMain.on("error-message", () => dialog.showMessageBox({
+        message: "Make sure that you filled everything in with more than one character and picked an image",
+        type: "info",
+        title: "oopsie"
+    }));
 }
 
 const clientId = "727887407491317910";
@@ -97,5 +104,6 @@ rpc.login({ clientId }).catch(console.error);
 
 app.on("ready", () => {
     autoUpdater.checkForUpdatesAndNotify();
+    setInterval(() => autoUpdater.checkForUpdatesAndNotify(), 60*60*1000);
     createWindow();
 });

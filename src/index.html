@@ -6,8 +6,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
         <link rel=stylesheet href=css/style.css />
         <link rel=stylesheet href=css/tooltip.css />
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-        <script src="../vue/vue.dev.js"></script>
+        <link rel="stylesheet" href="../libs/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="../libs/vue.min.js"></script>
     </head>
     <body>
         <div id="app">
@@ -17,7 +17,7 @@
             </div>
             <div style="position: absolute; left: 95.5vw; top: 1vw;">
                 <button class="closeButton" onclick="closeApp()">
-                    <svg viewBox="0 0 16 16" class="bi bi-box-arrow-in-down-right" fill="url(#grad1)" xmlns="http://www.w3.org/2000/svg" style="height:4vh; width:4vh;">
+                    <svg viewBox="0 0 16 16" fill="url(#grad1)" style="height:4vh; width:4vh;">
                         <defs>
                             <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="100%">
                                 <stop offset="0%" style="stop-color:#C0FFE4;stop-opacity:1" />
@@ -30,7 +30,6 @@
                     </svg>
                 </a>
             </div>
-
             <div id="container">
                 <div id="formContainer">
                     <div class="fadeBox"><input type="text" class="formField" id="line1" v-model="line1" placeholder="First text line" maxlength="128"></div><br>
@@ -44,7 +43,6 @@
                     <div class="fadeBox"><input type="text" class="formField" id="hover" v-model="hover" placeholder="Image hover text" maxlength="128"></div><br>
                     <div class="fadeBox"><button id="submitButton" onclick="requestRPCChange()">Apply Status</button></div>
                 </div>
-    
                 <div id="preview">
                     <div id="previewTop">
                         <img src="appassets/owen_placeholder.png" style="border-radius: 50%; padding: 2vh; height: 16vh; width: 16vh;">

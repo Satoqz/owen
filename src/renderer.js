@@ -1,5 +1,4 @@
 const { ipcRenderer } = require("electron");
-const { dialog } = require("electron").remote;
 const fs = require("fs");
 const path = require("path");
 // eslint-disable-next-line no-undef
@@ -40,11 +39,7 @@ function requestRPCChange() {
         ipcRenderer.send("presence-update", data);
     }
     else {
-        dialog.showMessageBox({
-            message: "Make sure that you filled everything in with more than one character and picked an image",
-            type: "info",
-            title: "oopsie"
-        });
+        ipcRenderer.send("error-message");
     }
 }
 
