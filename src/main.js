@@ -43,7 +43,7 @@ function createWindow() {
         pathname: path.join(__dirname, "index.html"),
         protocol: "file:",
         slashes: true,
-    }));
+    })).then(() => console.log("window finished loading"));
 
     const appIcon = new Tray(iconpath);
 
