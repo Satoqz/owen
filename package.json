@@ -16,11 +16,13 @@
     "mac": {
       "category": "owen"
     },
-    "publish": [{
+    "publish": [
+      {
         "provider": "github",
         "owner": "Satoqz",
         "repo": "owen"
-    }]
+      }
+    ]
   },
   "repository": {
     "type": "git",
@@ -36,44 +38,13 @@
     "electron-updater": "^4.3.1"
   },
   "devDependencies": {
-    "electron-builder": "^22.7.0",
+    "electromon": "^1.0.10",
     "electron": "^10.1.1",
-    "eslint": "^7.4.0",
-    "electromon": "^1.0.10"
+    "electron-builder": "^22.9.1",
+    "eslint": "^7.11.0",
+    "eslint-config-subaru": "^1.1.5"
   },
   "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 2020
-    },
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended"
-    ],
-    "globals": {
-      "Atomics": "readonly",
-      "SharedArrayBuffer": "readonly"
-    },
-    "rules": {
-      "indent": [
-        "warn",
-        4
-      ],
-      "linebreak-style": [
-        "warn",
-        "unix"
-      ],
-      "quotes": [
-        "warn",
-        "double"
-      ],
-      "semi": [
-        "error",
-        "always"
-      ],
-      "no-unused-vars": "off"
-    }
+    "extends": "subaru"
   }
 }
